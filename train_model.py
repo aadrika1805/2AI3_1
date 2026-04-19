@@ -6,23 +6,42 @@ import pickle
 # Load dataset
 df = pd.read_csv("insurance_data_linear.csv")
 
-# Preprocessing (temporary)
-df = pd.get_dummies(df, drop_first=True)
+# -------------------------------
+# Encoding (VERY IMPORTANT FIXED)
+# -------------------------------
+df['sex'] = df['sex'].map({'male': 0, 'female': 1})
 
-# Features & target
+df['smoker'] = df['smoker'].map({'no': 0, 'yes': 1})
+
+df['region'] = df['region'].map({
+    'southwest': 0,
+    'southeast': 1,
+    'northwest': 2,
+    'northeast': 3
+})
+
+# -------------------------------
+# Features & Target
+# -------------------------------
 X = df.drop("charges", axis=1)
 y = df["charges"]
 
-# Split data
+# -------------------------------
+# Train-Test Split
+# -------------------------------
 X_train, X_test, y_train, y_test = train_test_split(
     X, y, test_size=0.2, random_state=42
 )
 
-# Train model
+# -------------------------------
+# Model Training
+# -------------------------------
 model = LinearRegression()
 model.fit(X_train, y_train)
 
-# Save model
+# -------------------------------
+# Save Model
+# -------------------------------
 pickle.dump(model, open("model.pkl", "wb"))
 
-print("Model trained successfully!")
+print("Model trained and saved successfully!")
