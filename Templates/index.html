@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Insurance Cost Predictor</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f6f8;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+
+        .container {
+            width: 40%;
+            margin: 50px auto;
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+        }
+
+        h2 {
+            color: #333;
+        }
+
+        input {
+            width: 90%;
+            padding: 10px;
+            margin: 8px 0;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+        }
+
+        button {
+            background-color: #007BFF;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        .result {
+            margin-top: 20px;
+            font-size: 18px;
+            color: green;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+    <h2>Insurance Cost Predictor</h2>
+
+    <form action="/predict" method="post">
+
+        <input type="number" name="age" placeholder="Age" required>
+
+        <input type="number" step="0.1" name="bmi" placeholder="BMI" required>
+
+        <input type="number" name="children" placeholder="Number of Children" required>
+
+        <input type="number" name="sex_male" placeholder="Male (1 for Male, 0 for Female)" required>
+
+        <input type="number" name="smoker_yes" placeholder="Smoker (1 for Yes, 0 for No)" required>
+
+        <input type="number" name="region_northwest" placeholder="Northwest (1/0)" required>
+
+        <input type="number" name="region_southeast" placeholder="Southeast (1/0)" required>
+
+        <input type="number" name="region_southwest" placeholder="Southwest (1/0)" required>
+
+        <button type="submit">Predict Insurance Cost</button>
+    </form>
+
+    <div class="result">
+        <h3>{{ prediction_text }}</h3>
+    </div>
+</div>
+
+</body>
+</html>
