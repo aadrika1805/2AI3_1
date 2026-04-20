@@ -2,14 +2,14 @@ Project Title
 Insurance Cost Prediction using Linear Regression
 
 Team Members<br>
-<li>
-<ul>AADRIKA JHA(Team Lead)<br></ul>
-<ul> ABHASH SHARMA <br> </ul>
-<ul> ALISA SAHOO <br> </ul>
-<ul> AMARDIP KUMAR <br> </ul>
-<ul> BELIM FAISALKHAN ANWARKHAN <br> </ul>
-<ul> CHOVATIYA VRAJ HITESHBHAI <br> </ul>
-</li>
+
+<AADRIKA JHA(Team Lead)<br>
+ ABHASH SHARMA<br>
+ ALISA SAHOO <br>
+ AMARDIP KUMAR <br>
+ BELIM FAISALKHAN ANWARKHAN<br>
+ CHOVATIYA VRAJ HITESHBHAI<br>
+
 
 <hr>
 <b>Problem Statement<b>
